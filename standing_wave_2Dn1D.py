@@ -1,5 +1,6 @@
 import bpy
-import easybpy as eb
+# easybpy is an add-on. Install it first or disable it. 
+import easybpy as eb  
 
 from mathutils import Euler
 import math
@@ -27,7 +28,8 @@ def random_material(color):
     return material
     
 
-# clean up the scene and memory from previous runs
+# clean up the scene and memory from previous runs (eb is an add-on)
+# comment the following three lines if you haven't install it 
 eb.select_all_objects()
 eb.delete_selected_objects()
 eb.clear_unused_data()
