@@ -81,12 +81,12 @@ kappa = 2 * pi / lambd  # in [rad/m]
 omega = 2 * pi * frequency  # in [rad/s]/frame
 
 
-# Main loop for creating point "masses and setting drivers
+# Main loop for creating point "masses" and setting drivers
 for i in range(x_points):
     # create point "masses"
-    x = (start_x + i*x_offset)    
+    x = start_x + i*x_offset    
     for j in range(y_points):
-        y = (start_y + j*y_offset)
+        y = start_y + j*y_offset
 
         bpy.ops.mesh.primitive_ico_sphere_add(radius=size, location=(x,y,0))
         
@@ -106,7 +106,7 @@ for i in range(x_points):
         # add the material to the object
         obj.data.materials.append(mat)
 
-        # don't forge to turn around z-axis!
+        # don't forget to turn around z-axis!
         bpy.context.object.matrix_world = rot_mat @ bpy.context.object.matrix_world
 
 # count running time of script
